@@ -9,8 +9,9 @@ set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(IMGUI_DIR ${CMAKE_SOURCE_DIR}/libs/imgui)
+set(STB_DIR ${CMAKE_SOURCE_DIR}/libs/stb)
 
-include_directories(${IMGUI_DIR} ${IMGUI_DIR}/backends)
+include_directories(${IMGUI_DIR} ${IMGUI_DIR}/backends ${STB_DIR})
 
 file(GLOB_RECURSE SOURCES src/**)
 
@@ -28,7 +29,8 @@ add_executable(portfolio
 target_link_libraries(portfolio glfw3 ${OPENGL_LIBRARIES})
 
 if (EMSCRIPTEN)
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -s USE_GLFW=3 -s USE_WEBGL2=1 -s ASSERTIONS=1 -s WASM=1 -s ASYNCIFY")
+    message("Building for web")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -s USE_GLFW=3 -s USE_WEBGL2=1 -s ASSERTIONS=1 -s WASM=1 -s ASYNCIFY -s FETCH=1 --bind")
 endif ()
 
 file(COPY ${CMAKE_SOURCE_DIR}/imgui.html DESTINATION ${CMAKE_BINARY_DIR})

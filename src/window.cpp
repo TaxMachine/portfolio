@@ -7,6 +7,7 @@
 #include <chrono>
 
 #include <imgui.h>
+#include <iostream>
 
 #include <emscripten/emscripten.h>
 
@@ -63,11 +64,8 @@ void createImGUIWindow() {
         HTTPRequest request;
         request.url = "https://api.github.com/users/TaxMachine";
         const HTTPResponse response = HTTP::get(request);
-        if (ImGui::BeginPopupModal("Response")) {
-            ImGui::Text(std::to_string(response.status_code).c_str());
-            ImGui::Text(response.body.c_str());
-            ImGui::EndPopup();
-        }
+        std::cout << response.status_code << std::endl;
+        std::cout << response.body << std::endl;
     }
 
     ImGui::End();

@@ -12,7 +12,7 @@ HTTPResponse HTTP::get(const HTTPRequest& request) {
     emscripten_fetch_attr_t attr;
     emscripten_fetch_attr_init(&attr);
     strcpy(attr.requestMethod, "GET");
-    attr.attributes = EMSCRIPTEN_FETCH_LOAD_TO_MEMORY;
+    attr.attributes = EMSCRIPTEN_FETCH_LOAD_TO_MEMORY | EMSCRIPTEN_FETCH_REPLACE;
     attr.onsuccess = [](emscripten_fetch_t* fetch) {
         emscripten_fetch_close(fetch);
     };
@@ -49,5 +49,5 @@ HTTPResponse HTTP::post(const HTTPRequest& request) {
     response.status_code = res->status;
     response.headers = {};
 
-    return {};
+    return response;
 }

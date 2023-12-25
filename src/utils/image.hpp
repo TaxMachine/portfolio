@@ -7,7 +7,7 @@
 
 #include <GLES2/gl2.h>
 
-#include "../utils/stb_image.h"
+#include <stb_image.h>
 
 inline bool LoadTextureFromFile(const char* filename, GLuint* out_texture, int* out_width, int* out_height) {
     // Load from file
