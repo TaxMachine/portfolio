@@ -12,7 +12,7 @@
 
 #include "details.hpp"
 
-#include "components/ButtonWithImage.hpp"
+#include "utils/http.hpp"
 
 using namespace std::chrono;
 
@@ -59,7 +59,16 @@ void createImGUIWindow() {
 
     ImGui::Separator();
 
-    ImGui::Image((void*)0, ImVec2(0, 0), ImVec2(1, 1), ImVec2(0, 0));
+    if (ImGui::Button("request")) {
+        HTTPRequest request;
+        request.url = "https://api.github.com/users/TaxMachine";
+        const HTTPResponse response = HTTP::get(request);
+        if (ImGui::BeginPopupModal("Response")) {
+            ImGui::Text(std::to_string(response.status_code).c_str());
+            ImGui::Text(response.body.c_str());
+            ImGui::EndPopup();
+        }
+    }
 
     ImGui::End();
 }
