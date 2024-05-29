@@ -1,9 +1,9 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/app.ts"
   },
   "keywords": [],
   "author": "TaxMachine",
@@ -15,6 +15,7 @@
     "express": "^4.19.2",
     "express-rate-limit": "^7.2.0",
     "helmet": "^7.1.0",
+    "pug": "^3.0.3",
     "superagent": "^9.0.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
