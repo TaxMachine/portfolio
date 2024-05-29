@@ -1,0 +1,54 @@
+{
+  "languages": [
+    {
+      "name": "Nim",
+      "url": "https://nim-lang.org"
+    },
+    {
+      "name": "C++",
+      "url": ""
+    },
+    {
+      "name": "C",
+      "url": ""
+    },
+    {
+      "name": "Javascript",
+      "url": "https://nodejs.org/"
+    },
+    {
+      "name": "Python",
+      "url": "https://python.org"
+    },
+    {
+      "name": "Powershell",
+      "url": "https://learn.microsoft.com/en-us/powershell/"
+    },
+    {
+      "name": "Typescript",
+      "url": "https://www.typescriptlang.org"
+    },
+    {
+      "name": "Java",
+      "url": "https://www.java.com/"
+    }
+  ],
+  "frameworks": [
+    {
+      "name": "Express.js",
+      "url": "https://expressjs.com/"
+    },
+    {
+      "name": "ImGui",
+      "url": "https://github.com/ocornut/imgui"
+    },
+    {
+      "name": "Minecraft Fabric",
+      "url": "https://github.com/FabricMC/fabric"
+    },
+    {
+      "name": "Win32 API",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/apiindex/windows-api-list"
+    }
+  ]
+}
